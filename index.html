@@ -26,10 +26,13 @@
           var that = this;
           if (!api) {
             api = flowplayer($('.js-video-player')[0], {
-              sources: [{
-                type: 'application/x-mpegurl',
-                src: $(that).attr('href')
-              }]
+		    clip: {
+		      sources: [{
+			type: 'application/x-mpegurl',
+			src: $(that).attr('href')
+		      }]
+		    },
+		    autoplay: true
             });
           } else {
             api.load($(that).attr('href'), function(){
