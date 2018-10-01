@@ -8,9 +8,9 @@
   <body>
 	Playlist:
 	<ul class="links">
-		<li><a data-url="http://best.vod.n1info.com:8080/stream?asset=bgzemunpoljepkg150718jdm20180715190607126&stream=1mb&t=0&player=m3u8v&sp=n1info&u=n1info&p=n1Sh4redSecre7iNf0">Video1</a></li>
-		<li><a data-url="http://best.vod.n1info.com:8080/stream?asset=bgprelistavanjepcr011117120171101084452198&stream=1mb&t=0&player=m3u8v&sp=n1info&u=n1info&p=n1Sh4redSecre7iNf0">Video2</a></li>
-		<li><a data-url="http://best.vod.n1info.com:8080/stream?asset=bglplaimilapkg22jlb120180520220439003&stream=1mb&t=0&player=m3u8v&sp=n1info&u=n1info&p=n1Sh4redSecre7iNf0">Video3</a></li>
+		<li><a href="#" data-url="http://best.vod.n1info.com:8080/stream?asset=bgzemunpoljepkg150718jdm20180715190607126&stream=1mb&t=0&player=m3u8v&sp=n1info&u=n1info&p=n1Sh4redSecre7iNf0">Video1</a></li>
+		<li><a href="#" data-url="http://best.vod.n1info.com:8080/stream?asset=bgprelistavanjepcr011117120171101084452198&stream=1mb&t=0&player=m3u8v&sp=n1info&u=n1info&p=n1Sh4redSecre7iNf0">Video2</a></li>
+		<li><a href="#" data-url="http://best.vod.n1info.com:8080/stream?asset=bglplaimilapkg22jlb120180520220439003&stream=1mb&t=0&player=m3u8v&sp=n1info&u=n1info&p=n1Sh4redSecre7iNf0">Video3</a></li>
 	</ul>
     <div class="js-video-player"></div>
     
@@ -21,7 +21,8 @@
       // flowplayer init
       $(function(){
         var api = null;
-        $('a').on('click', function() {
+        $('a').on('click', function(e) {
+	  e.preventDefault();
           var that = this;
           if (!api) {
             api = flowplayer($('.js-video-player')[0], {
