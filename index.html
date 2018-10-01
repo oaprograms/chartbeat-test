@@ -16,6 +16,7 @@
     
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowplayer/7.2.7/flowplayer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.10.1/hls.light.min.js"></script>
     <script>
       // flowplayer init
       $(function(){
@@ -25,12 +26,13 @@
           if (!api) {
             api = flowplayer($('.js-video-player')[0], {
               sources: [{
-                type: 'todo',
+                type: 'application/x-mpegurl',
                 src: $(that).attr('data-url')
               }]
             });
           } else {
             api.load($(that).attr('data-url'), function(){
+		    console.log('loaded');
               //setVideoInfo('todo');
             });
           }
